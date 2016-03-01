@@ -1,0 +1,36 @@
+extends ../../layouts/default
+
+block head
+    title Add Event - NodeJS EventsApp
+
+
+block body
+    .row
+        .col-sm-8
+            .page-header
+                h1 Add Event
+                br
+                form(method='post', action='/events')
+                    .form-group
+                        label Event Name
+                        input.form-control(type='text', name='eventName', value=eventName)
+                    .form-group
+                        label Event Description
+                        textarea.form-control(name='eventDesc', rows='3') #{eventDesc}
+                    .form-group
+                        label Event Venue
+                        input.form-control(type='text', name='eventVenue', value=eventVenue)
+                    .form-group
+                        label Event Date
+                        input.form-control(type='date', name='eventDate', value=eventDate)
+                    .form-group
+                        label Event Start Time
+                        input.form-control(type='time', name='eventStartTime', value=eventStartTime)
+                    .form-group
+                        label Event End Time
+                        input.form-control(type='time', name='eventEndTime', value=eventEndTime)
+                    button.btn.btn-info(type='submit') Save
+
+        .col-sm-4
+            .page-header
+                h1 Sidebar

@@ -1,0 +1,43 @@
+.events li {
+    list-style: none;
+    padding: 20px 0;
+    line-height: 1.8em;
+}
+
+.events-details li {
+    list-style: none;
+    line-height: 1.8em;
+}
+
+.errors {
+    list-style: none;
+    margin-left: 0;
+}
+
+ul.success li,
+ul.info li,
+ul.error li {
+    margin: 20px 0 20px 0;
+    padding: 15px;
+    list-style: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+ul.success li {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+ul.info li {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+ul.error li {
+    color: #fff;
+    background-color: #c9302c;
+    border-color: #761c19;
+}

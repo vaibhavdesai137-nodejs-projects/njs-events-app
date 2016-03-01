@@ -1,0 +1,22 @@
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+footer a {
+    margin: 15px 10px 15px 10px;
+    color: white;
+    background-image: none;
+}
+
+footer a:hover {
+    background-color: yellow !important;
+    color: #555 !important;
+    background-image: none !important;
+}
+
+footer p {
+    margin: 10px;
+}

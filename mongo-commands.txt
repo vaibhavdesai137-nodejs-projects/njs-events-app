@@ -1,0 +1,57 @@
+
+// start mongo
+sudo ./mongod --directoryperdb --dbpath /Users/vaidesai/Development/mongodb/data/db/ --logpath /Users/vaidesai/Development/mongodb/log/mongodb.log --logappend -rest
+
+// run mongo shell
+./mongo
+
+// create DB
+use njs-events-app-db;
+show dbs;
+
+// create users
+db.createUser({
+    user: "dbuser",
+    pwd: "dbpassword",
+    roles: [{
+        role: "readWrite", 
+        db: "njs-events-app-db" 
+    }]
+});
+
+// create collection
+db.events.drop();
+db.createCollection('events');
+show collections;
+
+// add records
+db.events.insert({
+    "name": "VolleyBall",
+    "desc": "This is a VolleyBall meetup",
+    "date": new Date('July 04, 2016'),
+    "venue": 'San Jose',
+    "startTime": '2:00 PM',
+    "endTime": '5:00 PM',
+    "username": "v"
+});
+
+db.events.insert({
+    "name": "FoosBall",
+    "desc": "This is a FoosBall meetup",
+    "date": new Date('March 04, 2016'),
+    "venue": 'San Jose',
+    "startTime": '5:00 PM',
+    "endTime": '8:00 PM',
+    "username": "v"
+});
+
+db.posts.insert({
+"author": "Vaibhav Desai",
+"title": "Post2",
+"category": "Food",
+"content": "Lorem",
+"date": ISODate()
+});
+
+db.posts.find();
+db.posts.find().pretty();

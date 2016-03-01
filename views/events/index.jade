@@ -1,0 +1,27 @@
+extends ../../layouts/default
+
+block head
+    title Events - NodeJS Events App
+    
+block body
+
+    ul.errors
+        if errors
+            each error, i in errors
+                li.alert.alert-danger #{error.msg}
+
+    .row
+        .col-sm-8
+            .page-header
+                h1 View Events
+            ul.events
+                each event in events 
+                    li 
+                        strong #{event.name}
+                        |  - Posted by #{event.username}
+                        p #{event.desc}
+                        a.btn.btn-default(href='/events/show/#{event._id}') Read More
+        .col-sm-4
+            .page-header
+                h1 Sidebar
+                

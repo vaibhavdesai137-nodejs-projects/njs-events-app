@@ -1,0 +1,36 @@
+extends ../layouts/default
+
+block head
+  title Home - NodeJS Events App
+
+block neck
+  link(rel='stylesheet', href='/views/index.min.css?#{cacheBreaker}')
+
+block body
+  div.jumbotron
+    h1 EventsApp
+    p.lead
+      | Your local events app
+    div
+      a.btn.btn-primary.btn-lg(href='/signup/') Create an Account
+    div.clearfix
+  div.row
+    div.col-sm-4
+      div.panel.panel-default
+        div.panel-body
+          h3 About Us
+          p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
+          a.btn.btn-default.btn-block(href='/about/') Learn More
+    div.col-sm-4
+      div.panel.panel-default
+        div.panel-body
+          h3 Sign Up
+          p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
+          a.btn.btn-default.btn-block(href='/signup/') Learn More
+    div.col-sm-4
+      div.panel.panel-default
+        div.panel-body
+          h3 Contact Us
+          p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
+          a.btn.btn-default.btn-block(href='/contact/') Learn More
+    

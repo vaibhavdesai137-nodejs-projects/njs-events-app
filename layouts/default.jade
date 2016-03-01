@@ -1,0 +1,80 @@
+doctype html
+html
+    head
+        block head
+        title #{title} - NodeJS Events App
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        link(rel='stylesheet', href='/layouts/core.min.css?#{cacheBreaker}')
+        link(rel='stylesheet', href='/layouts/style.css')
+        link(rel='stylesheet', href='/layouts/footer.css')
+    
+    block neck
+    
+    body
+        div.navbar.navbar-default.navbar-fixed-top
+            div.container
+                div.navbar-header
+                    a.navbar-brand(href='/')
+                        img.navbar-logo(src='/media/logo-symbol-64x64.png', alt='Logo')
+                        span.navbar-brand-label #{projectName}
+                    button.navbar-toggle.collapsed(data-toggle='collapse', data-target='.my-navbar-collapse')
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                div.navbar-collapse.my-navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        li: a(href='/') Home
+                        li: a(href='/events/') Events
+                    ul.nav.navbar-nav.navbar-right
+                        if user && user.username
+                            li
+                                a(href='/myevents/')
+                                    i.fa.fa-calendar
+                                    |  My Events
+                            li
+                                a(href='/events/add')
+                                    i.fa.fa-plus
+                                    |  Add Event
+                            li
+                                a(href='#') 
+                                    i.fa.fa-user
+                                    |  #{user.username}
+                            li
+                                a(href='/logout/') Logout
+                        else
+                            li
+                                a(href='/login/') Sign In
+
+
+    div.page
+        div.container
+            != messages()
+            block body
+            
+
+    br
+    br
+    
+    footer
+        .col-md-12.text-center
+            p Thanks 
+                a(href='https://github.com/jedireza/drywall') &lt;Drywall&gt;
+                | for the kickass template    
+        .col-md-12
+            a.btn.btn-success(title='Source code for this website', target='_blank', href='https://github.com/vaibhavdesai137-nodejs-projects/njs-events-app')
+                i.fa.fa-code.fa-lg
+            a.btn.btn-success(title='My GitHub', target='_blank', href='https://github.com/vaibhavdesai137')
+                i.fa.fa-github.fa-lg
+            a.btn.btn-success(title='My LinkedIn', target='_blank', href='https://www.linkedin.com/in/vaibhav-desai-a864aa15')
+                i.fa.fa-linkedin.fa-lg
+            a.btn.btn-success(title='My Facebook', target='_blank', href='https://www.facebook.com/vaibhav.desai.165033')
+                i.fa.fa-facebook.fa-lg
+        .col-md-12
+            p Vaibhav Desai
+
+    div.ajax-spinner
+        img(src='/media/ajax-pulse.gif', alt='Loading')
+
+    script(src='/layouts/core.min.js?#{cacheBreaker}')
+
+    block feet
