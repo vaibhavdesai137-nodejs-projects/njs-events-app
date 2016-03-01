@@ -1,5 +1,8 @@
 extends ../../layouts/default
 
+block head
+    title Details - NodeJS Events App
+
 block body
     .row
         .col-sm-8
@@ -22,7 +25,9 @@ block body
                     | #{event.endTime}
                 
             br
-            p #{event.desc}
+            strong Description:
+            .event-desc 
+                p #{event.desc}
             
             br
             br

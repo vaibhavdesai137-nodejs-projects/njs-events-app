@@ -28,7 +28,7 @@ html
                     ul.nav.navbar-nav.navbar-right
                         if user && user.username
                             li
-                                a(href='/myevents/')
+                                a(href='/events/mine')
                                     i.fa.fa-calendar
                                     |  My Events
                             li
@@ -57,9 +57,8 @@ html
     
     footer
         .col-md-12.text-center
-            p Thanks 
+            p Extended using the kickass user management module 
                 a(href='https://github.com/jedireza/drywall') &lt;Drywall&gt;
-                | for the kickass template    
         .col-md-12
             a.btn.btn-success(title='Source code for this website', target='_blank', href='https://github.com/vaibhavdesai137-nodejs-projects/njs-events-app')
                 i.fa.fa-code.fa-lg
@@ -75,6 +74,8 @@ html
     div.ajax-spinner
         img(src='/media/ajax-pulse.gif', alt='Loading')
 
+    script(src='https://code.jquery.com/jquery-2.2.1.min.js')
+    script(src='/layouts/events.js?#{cacheBreaker}')
     script(src='/layouts/core.min.js?#{cacheBreaker}')
 
     block feet

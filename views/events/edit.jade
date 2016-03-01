@@ -1,0 +1,39 @@
+extends ../../layouts/default
+
+block head
+    title Edit Event - NodeJS EventsApp
+
+
+block body
+    .row
+        .col-sm-8
+            .page-header
+                h1 Edit Event
+                br
+                if event
+                    form(method='post', action='/events/edit/#{event._id}')
+                        .form-group
+                            label Event Name
+                            input.form-control(type='text', name='eventName', value='#{event.name}')
+                        .form-group
+                            label Event Description
+                            textarea.form-control(name='eventDesc', rows='3') #{event.desc}
+                        .form-group
+                            label Event Venue
+                            input.form-control(type='text', name='eventVenue', value='#{event.venue}')
+                        .form-group
+                            label Event Date
+                            input.form-control(type='date', name='eventDate', value='#{event.date}')
+                        .form-group
+                            label Event Start Time
+                            input.form-control(type='time', name='eventStartTime', value='#{event.startTime}')
+                        .form-group
+                            label Event End Time
+                            input.form-control(type='time', name='eventEndTime', value='#{event.endTime}')
+                        button.btn.btn-info(type='submit') Save
+                else
+                    p Sorry, the requested event does not exist
+
+        .col-sm-4
+            .page-header
+                h1 Sidebar

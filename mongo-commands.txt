@@ -20,11 +20,32 @@ db.createUser({
 });
 
 // create collection
+db.admingroups.drop();
+db.admins.drop();
+db.users.drop();
 db.events.drop();
+db.createCollection('admingroups');
+db.createCollection('admins');
+db.createCollection('users');
 db.createCollection('events');
 show collections;
 
 // add records
+
+db.admingroups.insert({
+    "_id": "root", 
+    "name": "Root"
+});
+
+db.admins.insert({
+    "name": {
+        "first": "Root",
+        "last": "Admin",
+        "full": "Root Admin"
+    },
+    "groups": ["root"]
+});
+
 db.events.insert({
     "name": "VolleyBall",
     "desc": "This is a VolleyBall meetup",

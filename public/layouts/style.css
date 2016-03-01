@@ -9,6 +9,14 @@
     line-height: 1.8em;
 }
 
+.event-desc {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #ccc;
+    padding: 10px;
+    margin-top: 10px;
+}
+
 .errors {
     list-style: none;
     margin-left: 0;

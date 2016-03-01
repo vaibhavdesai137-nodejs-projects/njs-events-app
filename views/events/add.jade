@@ -10,7 +10,7 @@ block body
             .page-header
                 h1 Add Event
                 br
-                form(method='post', action='/events')
+                form(method='post', action='/events/add')
                     .form-group
                         label Event Name
                         input.form-control(type='text', name='eventName', value=eventName)
@@ -29,7 +29,7 @@ block body
                     .form-group
                         label Event End Time
                         input.form-control(type='time', name='eventEndTime', value=eventEndTime)
-                    button.btn.btn-info(type='submit') Save
+                    button.btn.btn-info(type='submit') Create Event
 
         .col-sm-4
             .page-header

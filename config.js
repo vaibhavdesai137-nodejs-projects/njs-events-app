@@ -2,10 +2,10 @@
 
 exports.port = process.env.PORT || 8080;
 /*exports.mongodb = {
-    uri: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://dbuser:dbpassword@127.0.0.1:27017/njs-events-app-db'
+    uri: 'mongodb://dbuser:dbpassword@127.0.0.1:27017/njs-events-app-db'
 };*/
 exports.mongodb = {
-    uri: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://dbuser:dbpassword@ds019638:19638/njs-events-app-db'
+    uri: 'mongodb://dbuser:dbpassword@ds019638:19638/njs-events-app-db'
 };
 exports.projectName = 'EventsApp';
 exports.systemEmail = 'your@email.addy';
